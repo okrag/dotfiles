@@ -1,3 +1,5 @@
 [user]
 	email = 48834705+okrag@users.noreply.github.com
 	name = Okrag
+[core]
+  editor = "nano"
