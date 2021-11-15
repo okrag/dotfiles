@@ -15,5 +15,3 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/too
 echo "Installing slimzsh..." 
 git clone --recursive https://github.com/changs/slimzsh.git ~/.slimzsh
 
-cat install2.sh | zsh
-
