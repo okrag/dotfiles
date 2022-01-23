@@ -3,3 +3,7 @@
 	name = Okrag
 [core]
   editor = "nano"
+[pull]
+	rebase = false
+[init]
+	defaultBranch = main

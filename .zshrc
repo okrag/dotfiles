@@ -105,3 +105,7 @@ export NVM_DIR="$HOME/.nvm"
 
 export DENO_INSTALL="$HOME/.deno"
 export PATH="$DENO_INSTALL/bin:$PATH"
+
+export CHROME_EXECUTABLE="/usr/bin/brave-browser"
+
+export PATH="$HOME/.intellij/bin:$PATH"
