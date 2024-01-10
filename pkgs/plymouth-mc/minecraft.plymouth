@@ -1,0 +1,8 @@
+[Plymouth Theme]
+Name=minecraft
+Description=This is a Plymouth theme with the minecraft loading screen animation.
+ModuleName=script
+
+[script]
+ImageDir=/usr/share/plymouth/themes/minecraft
+ScriptFile=/usr/share/plymouth/themes/minecraft/minecraft.script

@@ -1,0 +1,68 @@
+Window.SetBackgroundTopColor (0.08627450980392157, 0.08627450980392157, 0.08627450980392157);
+Window.SetBackgroundBottomColor (0.08627450980392157, 0.08627450980392157, 0.08627450980392157);
+
+# consts
+progress_frame_count = 220;
+password_offset_left = 665;
+password_offset_top = 230;
+password_bullet_spacing = 0;
+
+progress_speed = 1;
+
+# image setup
+for (i = 0; i < progress_frame_count; i++)
+  progress_image[i] = Image("images/progress-" + (i+1) + ".png");
+
+password_image = Image("images/password.png");
+bullet_image = Image("images/bullet.png");
+
+main_sprite = Sprite();
+
+state = "progress";
+
+prev_length = 0;
+
+progress = 0;
+
+fun progress_callback(time, _p) {
+  if (state == "progress") {
+    for (i = 0; i < prev_length; i++)
+      global.password_bullets[i].SetOpacity(0);
+    main_sprite.SetImage(progress_image[Math.Min(Math.Int(progress * progress_speed), progress_frame_count - 1)]);
+  }
+}
+
+fun password_callback(password, length) {
+  state = "password";
+  main_sprite.SetImage(password_image);
+
+  for (i = 0; i < prev_length; i++)
+    global.password_bullets[i].SetOpacity(0);
+
+
+  prev_length = Math.Min(length, 32);
+
+  for (i = 0; i < Math.Min(length, 32); i++) {
+    if (global.password_bullets[i]) {
+      global.password_bullets[i].SetOpacity(1);
+    } else {
+      global.password_bullets[i] = Sprite(bullet_image);
+      global.password_bullets[i].SetPosition(password_offset_left + i * (password_bullet_spacing + bullet_image.GetWidth()), password_offset_top, 1);
+    }
+  }
+}
+
+fun normal_callback() {
+  state = "progress";
+  progress = 0;
+}
+
+fun refresh_callback() {
+  if (state == "progress") progress++;
+}
+
+Plymouth.SetBootProgressFunction(progress_callback);
+Plymouth.SetDisplayPasswordFunction(password_callback);
+Plymouth.SetRefreshFunction(refresh_callback);
+Plymouth.SetDisplayNormalFunction(normal_callback);
+

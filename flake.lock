@@ -1,0 +1,84 @@
+{
+  "nodes": {
+    "home-manager": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1704276313,
+        "narHash": "sha256-4eD4RaAKHLj0ztw5pQcNFs3hGpxrsYb0e9Qir+Ute+w=",
+        "owner": "nix-community",
+        "repo": "home-manager",
+        "rev": "4d8f90205c6c90be2e81d94d0e5eedf71c1ba34e",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nix-community",
+        "ref": "master",
+        "repo": "home-manager",
+        "type": "github"
+      }
+    },
+    "minegrub-theme": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1,
+        "narHash": "sha256-hm9x8p0pHfLZDO84OtPLA5jMTQs4b/46PTUzQ0WbnCM=",
+        "path": "/nix/store/58lkvnyx59qr5p0hnlqwkp805nrzgqwm-source/minegrub-theme",
+        "type": "path"
+      },
+      "original": {
+        "path": "/nix/store/58lkvnyx59qr5p0hnlqwkp805nrzgqwm-source/minegrub-theme",
+        "type": "path"
+      }
+    },
+    "nixpkgs": {
+      "locked": {
+        "lastModified": 1703961334,
+        "narHash": "sha256-M1mV/Cq+pgjk0rt6VxoyyD+O8cOUiai8t9Q6Yyq4noY=",
+        "owner": "nixos",
+        "repo": "nixpkgs",
+        "rev": "b0d36bd0a420ecee3bc916c91886caca87c894e9",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nixos",
+        "ref": "nixos-unstable",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
+    "nixpkgs-master": {
+      "locked": {
+        "lastModified": 1704285901,
+        "narHash": "sha256-6c+qYua0p6SBEiZ0vTLqKz4qedQBXIjtJkhEt9Dbv+8=",
+        "owner": "nixos",
+        "repo": "nixpkgs",
+        "rev": "8ab32dafb7c85fa8a3eafa22a00aad456906b513",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nixos",
+        "ref": "master",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
+    "root": {
+      "inputs": {
+        "home-manager": "home-manager",
+        "minegrub-theme": "minegrub-theme",
+        "nixpkgs": "nixpkgs",
+        "nixpkgs-master": "nixpkgs-master"
+      }
+    }
+  },
+  "root": "root",
+  "version": 7
+}
