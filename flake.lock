@@ -7,11 +7,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1704276313,
-        "narHash": "sha256-4eD4RaAKHLj0ztw5pQcNFs3hGpxrsYb0e9Qir+Ute+w=",
+        "lastModified": 1704809957,
+        "narHash": "sha256-Z8sBeoeeY2O+BNqh5C+4Z1h1F1wQ2mij7yPZ2GY397M=",
         "owner": "nix-community",
         "repo": "home-manager",
-        "rev": "4d8f90205c6c90be2e81d94d0e5eedf71c1ba34e",
+        "rev": "e13aa9e287b3365473e5897e3667ea80a899cdfb",
         "type": "github"
       },
       "original": {
@@ -21,30 +21,13 @@
         "type": "github"
       }
     },
-    "minegrub-theme": {
-      "inputs": {
-        "nixpkgs": [
-          "nixpkgs"
-        ]
-      },
-      "locked": {
-        "lastModified": 1,
-        "narHash": "sha256-hm9x8p0pHfLZDO84OtPLA5jMTQs4b/46PTUzQ0WbnCM=",
-        "path": "/nix/store/58lkvnyx59qr5p0hnlqwkp805nrzgqwm-source/minegrub-theme",
-        "type": "path"
-      },
-      "original": {
-        "path": "/nix/store/58lkvnyx59qr5p0hnlqwkp805nrzgqwm-source/minegrub-theme",
-        "type": "path"
-      }
-    },
     "nixpkgs": {
       "locked": {
-        "lastModified": 1703961334,
-        "narHash": "sha256-M1mV/Cq+pgjk0rt6VxoyyD+O8cOUiai8t9Q6Yyq4noY=",
+        "lastModified": 1704722960,
+        "narHash": "sha256-mKGJ3sPsT6//s+Knglai5YflJUF2DGj7Ai6Ynopz0kI=",
         "owner": "nixos",
         "repo": "nixpkgs",
-        "rev": "b0d36bd0a420ecee3bc916c91886caca87c894e9",
+        "rev": "317484b1ead87b9c1b8ac5261a8d2dd748a0492d",
         "type": "github"
       },
       "original": {
@@ -56,11 +39,11 @@
     },
     "nixpkgs-master": {
       "locked": {
-        "lastModified": 1704285901,
-        "narHash": "sha256-6c+qYua0p6SBEiZ0vTLqKz4qedQBXIjtJkhEt9Dbv+8=",
+        "lastModified": 1704922066,
+        "narHash": "sha256-lqeExu1cV7O48wCno3R3mhm8c4LsLspVQCXJTw9lYwU=",
         "owner": "nixos",
         "repo": "nixpkgs",
-        "rev": "8ab32dafb7c85fa8a3eafa22a00aad456906b513",
+        "rev": "58e48298732bc9c3fb4785ec99ca81c1398ae8f2",
         "type": "github"
       },
       "original": {
@@ -73,7 +56,6 @@
     "root": {
       "inputs": {
         "home-manager": "home-manager",
-        "minegrub-theme": "minegrub-theme",
         "nixpkgs": "nixpkgs",
         "nixpkgs-master": "nixpkgs-master"
       }

@@ -41,8 +41,13 @@ window#waybar,
     padding: 2px 5px;
 }
 
+#mpris, #custom-nightlight {
+    cursor: pointer;
+}
+
 #clock,
 #temperature,
+#custom-nightlight,
 #cpu,
 #memory,
 #pulseaudio,
@@ -72,7 +77,7 @@ window#waybar,
     margin-right: 4px;
 }
 
-#temperature {
+#custom-nightlight {
     margin-left: 16px;
 }
 

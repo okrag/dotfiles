@@ -9,12 +9,9 @@
     # Home manager
     home-manager.url = "github:nix-community/home-manager/master";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
-
-    minegrub-theme.url = "./minegrub-theme";
-    minegrub-theme.inputs.nixpkgs.follows = "nixpkgs";
   };
 
-  outputs = { self, nixpkgs, home-manager, minegrub-theme, nixpkgs-master, ... }@inputs:
+  outputs = { self, nixpkgs, home-manager, nixpkgs-master, ... }@inputs:
     let
       inherit (self) outputs;
       system = "x86_64-linux";
@@ -31,7 +28,6 @@
           specialArgs = { inherit inputs outputs pkgs-master; };
           modules = [
             ./nixos/configuration.nix
-            minegrub-theme.nixosModules.default
           ];
         };
       };

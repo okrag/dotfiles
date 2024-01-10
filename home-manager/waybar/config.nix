@@ -1,3 +1,4 @@
+{ pkgs }:
 let colors = import ./colors.nix; in
 [
   {
@@ -10,7 +11,7 @@ let colors = import ./colors.nix; in
 
     modules-left = [ "hyprland/workspaces" "hyprland/window" "mpris" ]; # Sets modules for the left of the bar
     modules-center = [ "clock" ]; # Set modules for the center of the bar
-    modules-right = [ "tray" "temperature" "bluetooth" "cpu" "memory" "custom/kernel" "pulseaudio" ]; # Set modules for the right of the bar
+    modules-right = [ "tray" "custom/nightlight" "temperature" "bluetooth" "cpu" "memory" "custom/kernel" "pulseaudio" ]; # Set modules for the right of the bar
 
     clock = {
       format = "{:<big><span color=\"${colors.clock}\">  </span>%H:%M</big>\t<span color=\"${colors.calendar}\">  </span>%A, %B %d}";
@@ -86,6 +87,11 @@ let colors = import ./colors.nix; in
         };
       };
 
+    "custom/nightlight" = {
+      on-click = "${pkgs.hyprshade}/bin/hyprshade toggle ${../hypr/nightlight.frag}";
+
+      format = "<span color=\"${colors.kernel}\"> </span>";
+    };
     "custom/kernel" = {
       exec = "uname -r | cut -d '-' -f1";
       interval = "once";
