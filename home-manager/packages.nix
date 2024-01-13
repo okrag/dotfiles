@@ -5,6 +5,7 @@
     mdcat
     qemu
     woeusb-ng
+    file
 
     # Apps
     networkmanagerapplet
