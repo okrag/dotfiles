@@ -2,14 +2,14 @@
   programs.rofi = {
     enable = true;
     package = pkgs.rofi-wayland;
-    theme = import ./theme.nix { inherit config; };
+    #theme = import ./theme.nix { inherit config; };
+    theme = "${./spotlight.rasi}";
     font = "JetBrainsMono Nerd Font 12";
     terminal = "${pkgs.foot}/bin/foot";
     plugins = with pkgs; [
       rofi-calc
     ];
     extraConfig = {
-      modi = "calc,drun,window";
       icon-theme = "Oranchelo";
       show-icons = true;
       drun-display-format = "{icon} {name}";
@@ -21,7 +21,7 @@
       display-window = "   Window";
       display-Network = " 󰤨  Network";
       display-calc = "   Calc";
-      display-power-menu = " ⏻  Power Menu";
+      display-p = " ⏻  Power Menu";
       sidebar-mode = true;
     };
   };

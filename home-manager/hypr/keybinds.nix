@@ -48,9 +48,9 @@
   bindl = SUPERSHIFT, L, exec, sleep 0.1 && systemctl suspend
 
   # App launcher
-  bindr = SUPER, SUPER_L, exec, rofi -show drun
+  bindr = SUPER, SUPER_L, exec, rofi -show drun -modi drun
   bind = SUPER, P, exec, rofi -show p -modi p:\'${pkgs.rofi-power-menu}/bin/rofi-power-menu\'
-  # -modi p:'rofi-power-menu --symbols-font "Symbols Nerd Font Mono"'
+  bind = SUPER, C, exec, rofi -show calc -modi calc
 
   ############################ Keybinds for Hyprland ############################
   # Swap windows

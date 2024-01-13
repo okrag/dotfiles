@@ -68,14 +68,14 @@
     };
 
   rofi = {
-    border = "#89b4fae6";
-    bg = "#1e1e2ee6";
+    border = "#89b4fa80";
+    bg = "#1e1e2e80";
     prompt_bg = "#89b4fae6";
     prompt_text = "#1e1e2ee6";
 
-    entry_bg = "#1e1e2ee6";
+    entry_bg = "#1e1e2e80";
     entry_text = "#cdd6f4e6";
-    entry_selected_bg = "#1e1e2ee6";
+    entry_selected_bg = "#1e1e2e80";
     entry_selected_text = "#f38ba8e6";
 
     button_bg = "#1e1e2ee6";
@@ -84,9 +84,9 @@
     button_selected_bg = "#1e1e2ee6";
     button_selected_text = "#89b4fae6";
 
-    message_bg = "#1e1e2ee6";
+    message_bg = "#1e1e2e80";
 
-    textbox_bg = "#1e1e2ee6";
+    textbox_bg = "#1e1e2e80";
     textbox_text = "#89b4fae6";
   };
 
