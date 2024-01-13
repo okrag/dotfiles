@@ -98,5 +98,6 @@ element-text {
 }
 
 button {
-    display: none;
+    text-color: transparent;
+    background-color: transparent;
 }
