@@ -41,10 +41,6 @@ window#waybar,
     padding: 2px 5px;
 }
 
-#mpris, #custom-nightlight {
-    cursor: pointer;
-}
-
 #clock,
 #temperature,
 #custom-nightlight,
