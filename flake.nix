@@ -15,7 +15,6 @@
       inherit (self) outputs;
       system = "x86_64-linux";
       pkgs = nixpkgs.legacyPackages.${system};
-      pkgs-master = nixpkgs-master.legacyPackages.${system};
     in
     rec {
       packages = import ./pkgs { inherit pkgs; };
