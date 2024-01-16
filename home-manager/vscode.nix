@@ -77,8 +77,9 @@
         "editor.defaultFormatter" = "tamasfe.even-better-toml";
       };
       "svelte.enable-ts-plugin" = true;
-      "editor.tabSize" = 4;
-      "prettier.tabWidth" = 4;
+      "editor.tabSize" = 2;
+      "prettier.tabWidth" = 2;
+      "tabnine.experimentalAutoImports" = true;
     };
   };
 }

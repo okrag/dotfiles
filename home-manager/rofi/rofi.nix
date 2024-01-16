@@ -3,7 +3,7 @@
     enable = true;
     package = pkgs.rofi-wayland;
     #theme = import ./theme.nix { inherit config; };
-    theme = "${./spotlight.rasi}";
+    theme = ./spotlight.rasi;
     font = "JetBrainsMono Nerd Font 12";
     terminal = "${pkgs.foot}/bin/foot";
     plugins = with pkgs; [

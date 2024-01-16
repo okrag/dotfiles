@@ -105,6 +105,8 @@
       enable = true;
       userName = "okrag";
       userEmail = "48834705+okrag@users.noreply.github.com";
+      delta.enable = true;
+      extraConfig = { init.defaultBranch = "main"; };
     };
 
     swaylock = {
