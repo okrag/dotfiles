@@ -23,47 +23,40 @@
     active_background = "#394461";
   };
 
-  foot = let color = c: builtins.substring 1 (builtins.stringLength c - 1) c; in
+  alacritty = let color = c: builtins.substring 1 (builtins.stringLength c - 1) c; in
     {
-      cursor = {
-        style = "beam";
-        color = "${color "#1E1E2E"} ${color "#F5E0DC"}";
-        blink = true;
-      };
-
       colors = {
-        alpha = 0.4;
-        foreground = color "#CDD6F4";
-        background = color "#1E1E2E";
+        primary = {
+          foreground = "#CDD6F4";
+          background = "#1E1E2E";
+        };
 
-        selection-foreground = color "#1E1E2E";
-        selection-background = color "#F5E0DC";
+        selection = {
+          text = "#1E1E2E";
+          background = "#F5E0DC";
+        };
 
-        urls = color "#F5E0DC";
+        normal = {
+          black = "#45475A";
+          red = "#F38BA8";
+          green = "#A6E3A1";
+          yellow = "#F9E2AF";
+          blue = "#89B4FA";
+          magenta = "#F5C2E7";
+          cyan = "#94E2D5";
+          white = "#BAC2DE";
+        };
 
-        regular0 = color "#45475A";
-        bright0 = color "#585B70";
-
-        regular1 = color "#F38BA8";
-        bright1 = color "#F38BA8";
-
-        regular2 = color "#A6E3A1";
-        bright2 = color "#A6E3A1";
-
-        regular3 = color "#F9E2AF";
-        bright3 = color "#F9E2AF";
-
-        regular4 = color "#89B4FA";
-        bright4 = color "#89B4FA";
-
-        regular5 = color "#F5C2E7";
-        bright5 = color "#F5C2E7";
-
-        regular6 = color "#94E2D5";
-        bright6 = color "#94E2D5";
-
-        regular7 = color "#BAC2DE";
-        bright7 = color "#A6ADC8";
+        bright = {
+          black = "#585B70";
+          red = "#F38BA8";
+          green = "#A6E3A1";
+          yellow = "#F9E2AF";
+          blue = "#89B4FA";
+          magenta = "#F5C2E7";
+          cyan = "#94E2D5";
+          white = "#A6ADC8";
+        };
       };
     };
 

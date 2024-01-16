@@ -2,8 +2,8 @@
 let conf = rec {
   wallpaper = ../wallpapers/mac.jpg;
   lock = "${../lock.sh} ${pkgs.swayidle}/bin/swayidle ${wallpaper}";
-  terminal = "${pkgs.foot}/bin/foot";
-  terminal_class = "foot";
+  terminal = "${pkgs.alacritty}/bin/alacritty";
+  terminal_class = "alacritty";
   inherit pkgs;
 }; in
 {

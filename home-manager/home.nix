@@ -1,6 +1,6 @@
 { outputs, pkgs, config, ... }: {
   imports = [
-    ./foot.nix
+    ./alacritty.nix
     ./vscode.nix
     ./zsh.nix
     ./dunst.nix
