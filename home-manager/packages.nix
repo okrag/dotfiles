@@ -1,4 +1,4 @@
-{ pkgs, pkgs-master, ... }: {
+{ pkgs, ... }: {
   home.packages = with pkgs; [
     # Other
     freshfetch

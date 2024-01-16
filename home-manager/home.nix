@@ -1,4 +1,4 @@
-{ outputs, pkgs, config, pkgs-master, ... }: {
+{ outputs, pkgs, config, ... }: {
   imports = [
     ./foot.nix
     ./vscode.nix

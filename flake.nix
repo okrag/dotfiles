@@ -4,14 +4,13 @@
   inputs = {
     # Nixpkgs
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
-    nixpkgs-master.url = "github:nixos/nixpkgs/master";
 
     # Home manager
     home-manager.url = "github:nix-community/home-manager/master";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
   };
 
-  outputs = { self, nixpkgs, home-manager, nixpkgs-master, ... }@inputs:
+  outputs = { self, nixpkgs, home-manager, ... }@inputs:
     let
       inherit (self) outputs;
       system = "x86_64-linux";
@@ -25,7 +24,7 @@
 
       nixosConfigurations = {
         okrag = nixpkgs.lib.nixosSystem {
-          specialArgs = { inherit inputs outputs pkgs-master; };
+          specialArgs = { inherit inputs outputs; };
           modules = [
             ./nixos/configuration.nix
           ];
@@ -35,7 +34,7 @@
       homeConfigurations = {
         okrag = home-manager.lib.homeManagerConfiguration {
           inherit pkgs;
-          extraSpecialArgs = { inherit inputs outputs pkgs-master; };
+          extraSpecialArgs = { inherit inputs outputs; };
           modules = [
             ./home-manager/home.nix
           ];
