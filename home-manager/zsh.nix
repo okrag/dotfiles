@@ -27,6 +27,7 @@
             mv .git .git.b
             home-manager switch --flake ${configPath}#okrag
             mv .git.b .git
+            nix run nixpkgs#betterdiscordctl install
             cd $pwd
           }
 
