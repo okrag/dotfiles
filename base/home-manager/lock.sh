@@ -6,7 +6,7 @@ wallpaper=$2
 $swayidle \
     timeout 10 'hyprctl dispatch dpms off' \
     resume 'hyprctl dispatch dpms on' \
-    timeout 150 'systemctl suspend' &
+    timeout 150 'systemctl suspend && hyprctl dispatch dpms on' &
 	
 # Locks the screen immediately
 swaylock \
