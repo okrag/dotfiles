@@ -9,7 +9,7 @@
 
     # Apps
     networkmanagerapplet
-    brave
+    floorp
     discord
     spotify
     openboard

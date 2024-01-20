@@ -28,10 +28,7 @@
 
   gtk = {
     enable = true;
-    theme.name = "Adwaita-dark";
-    iconTheme.package = pkgs.gnome.adwaita-icon-theme;
-    iconTheme.name = "Adwaita-dark";
-
+    theme.name = "adwaita-dark";
   };
 
   qt = {
