@@ -24,7 +24,6 @@
           function homeupdate {
             pwd=$(pwd)
             cd ${configPath}
-            ./apply.sh
             mv .git .git.b
             cd patched
             mv .git .git.b
@@ -39,7 +38,6 @@
           function sysupdate {
             pwd=$(pwd)
             cd ${configPath}
-            ./apply.sh
             mv .git .git.b
             cd patched
             mv .git .git.b
