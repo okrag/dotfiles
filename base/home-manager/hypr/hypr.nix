@@ -3,6 +3,7 @@ let conf = rec {
   wallpaper = ../wallpapers/mac.jpg;
   lock = "${../lock.sh} ${pkgs.swayidle}/bin/swayidle ${wallpaper}";
   terminal = "${pkgs.alacritty}/bin/alacritty";
+  browser = "${pkgs.floorp}/bin/floorp";
   terminal_class = "alacritty";
   inherit pkgs;
 }; in

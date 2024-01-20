@@ -1,4 +1,4 @@
-{ lock, terminal, pkgs, ... }: ''
+{ lock, terminal, pkgs, browser, ... }: ''
   #################### It just works™ keybinds ###################
   # Volume
   bindl = ,XF86AudioMute, exec, pactl set-sink-mute @DEFAULT_SINK@ toggle
@@ -15,6 +15,7 @@
   ######################################## Keybinds ########################################
   # Apps: just normal apps
   bind = SUPER, Return, exec, ${terminal}
+  bind = SUPER, B, exec, ${browser}
 
   # Actions 
   bind = SUPERSHIFT, Period, exec, pkill wofi || wofi-emoji
