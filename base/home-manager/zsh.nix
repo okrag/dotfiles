@@ -24,8 +24,13 @@
           function homeupdate {
             pwd=$(pwd)
             cd ${configPath}
+            ./apply.sh
             mv .git .git.b
-            home-manager switch --flake ${configPath}#okrag
+            cd patched
+            mv .git .git.b
+            home-manager switch --flake .#okrag
+            mv .git.b .git
+            cd ..
             mv .git.b .git
             nix run nixpkgs#betterdiscordctl install
             cd $pwd
@@ -34,8 +39,13 @@
           function sysupdate {
             pwd=$(pwd)
             cd ${configPath}
+            ./apply.sh
             mv .git .git.b
-            doas nixos-rebuild switch --flake ${configPath}#okrag
+            cd patched
+            mv .git .git.b
+            doas nixos-rebuild switch --flake .#okrag
+            mv .git.b .git
+            cd ..
             mv .git.b .git
             cd $pwd
           }
