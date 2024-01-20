@@ -1,4 +1,4 @@
-{ wallpaper, lock, pkgs, terminal, terminal_class }: {
+{ wallpaper, lock, pkgs, terminal, terminal_class, ... }: {
   monitor = [
     "DP-2,1920x1080@144,0x0,1"
     "DP-1,1920x1080@144,0x0,1"
