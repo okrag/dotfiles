@@ -5,8 +5,8 @@ wallpaper=$2
 # Times the screen off and puts it to background
 $swayidle \
     timeout 10 'hyprctl dispatch dpms off' \
-    resume 'hyprctl dispatch dpms on' \ 
-	timeout 150 'systemctl suspend' &
+    resume 'hyprctl dispatch dpms on' \
+    timeout 150 'systemctl suspend' &
 	
 # Locks the screen immediately
 swaylock \
