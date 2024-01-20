@@ -21,29 +21,21 @@
   bind = SUPERSHIFT, Period, exec, pkill wofi || wofi-emoji
   bind = SUPER, Q, killactive,
   bind = SUPERALT, Space, togglefloating, 
-  bind = SHIFTSUPERALT, Q, exec, hyprctl kill
+  bind = SHIFTSUPER, Q, exec, hyprctl kill
   bind = CONTROLSHIFTALTSUPER, Delete, exec, systemctl poweroff
 
   # Screenshot, Record, OCR (Optical Character Recognition), Color picker, Clipboard history
-  bind = SUPERSHIFT, D, exec,~/.local/bin/rubyshot | wl-copy
   bind = SUPERSHIFTALT, S, exec, grim -g "$(slurp)" - | swappy -f -
   bindl =,Print,exec,grim - | wl-copy
   bind = SUPERSHIFT, S, exec, grim -g "$(slurp)" - | wl-copy
-  bind = SUPERALT, R, exec, ~/.local/bin/record-script.sh
-  bind = CONTROLALT, R, exec, ~/.local/bin/record-script.sh --sound
-  bind = SUPERSHIFTALT, R, exec, ~/.local/bin/record-script-fullscreen.sh
-  bind = CONTROLSUPERSHIFT,S,exec,grim -g "$(slurp)" "tmp.png" && tesseract "tmp.png" - | wl-copy && rm "tmp.png"
-  bind = SUPERSHIFT,T,exec,grim -g "$(slurp)" "tmp.png" && tesseract "tmp.png" - | wl-copy && rm "tmp.png"
   bind = SUPERSHIFT, C, exec, hyprpicker -a
-  bind = SUPER, B, exec, copyq menu 
-  bind = SUPER, V, exec, pkill fuzzel || cliphist list | fuzzel --no-fuzzy --icon-theme=candy-icons --background-color=1D1D27ee --text-color=cdd6f4ff --match-color=AC16C7FF --border-width=3 --border-radius=10 --border-color=8701E7FF	 --selection-color=585b70ff --selection-text-color=cdd6f4ff --selection-match-color=AC16C7FF --font="Torus"  --prompt="   " --dmenu | cliphist decode | wl-copy
 
   # Media
   #bind = SUPERSHIFT, N, exec, playerctl next || playerctl position `bc <<< "100 * $(playerctl metadata mpris:length) / 1000000 / 100"`
   #bind = SUPERSHIFT, B, exec, playerctl previous
   #bind = SUPERSHIFT, P, exec, playerctl play-pause
 
-  #Lock screen  |  blur: --effect-blur=20x20
+  #Lock screen
   bind = SUPER, L, exec, ${lock}
   bind = SUPERSHIFT, L, exec, ${lock}
   bindl = SUPERSHIFT, L, exec, sleep 0.1 && systemctl suspend
@@ -101,16 +93,12 @@
   # Switching
   ${builtins.concatStringsSep "\n" (builtins.genList (i: "bind = SUPER, ${toString (i + 1)}, exec, hyprsome workspace ${toString (i + 1)}") 9)}
   bind = SUPER, 0, exec, hyprsome workspace 10
-  #bind = SUPER, S, togglespecialworkspace,
-  #bind = CONTROLSUPER, S, togglespecialworkspace,
   bind = ALT, Tab, cyclenext
   bind = ALT, Tab, bringactivetotop,   # bring it to the top
 
   # Move window to workspace Super + Shift + [0-9] 
   ${builtins.concatStringsSep "\n" (builtins.genList (i: "bind = SUPER SHIFT, ${toString (i + 1)}, exec, hyprsome move ${toString (i + 1)}") 9)}
   bind = SUPER SHIFT, 0, exec, hyprsome move 10
-  #bind = CONTROLSHIFTSUPER, Up, movetoworkspacesilent, special
-  #bind = SUPERALT, S, movetoworkspacesilent, special
 
   # Scroll through existing workspaces with (Control) + Super + scroll
   bind = SUPER, mouse_up, workspace, +1

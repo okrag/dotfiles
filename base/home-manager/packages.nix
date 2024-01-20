@@ -49,6 +49,9 @@
     # Screenshots
     grim
     slurp
+    swappy
+
+    hyprpicker
 
     # Libs
     nixpkgs-fmt
