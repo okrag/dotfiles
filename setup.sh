@@ -7,7 +7,7 @@ then
 fi
 
 cd ~
-git clone https://github.com/okrag/patcher ~/tmp-pather-src
-cd ~/tmp-pather-src
+git clone https://github.com/okrag/patcher ~/tmp-patcher-src
+cd ~/tmp-patcher-src
 cargo install --path .
-rm -rf ~/tmp-pather-src
+rm -rf ~/tmp-patcher-src
