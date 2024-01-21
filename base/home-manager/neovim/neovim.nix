@@ -12,6 +12,8 @@
       lua-language-server
       nodePackages.typescript-language-server
       ripgrep
+      nixd
+      nixpkgs-fmt
     ];
     plugins = with pkgs.vimPlugins; [
       (nvim-treesitter.withPlugins (p: [
@@ -44,6 +46,21 @@
         plugin = lsp-zero-nvim;
         type = "lua";
         config = builtins.readFile ./lsp.lua;
+      }
+      {
+        plugin = lualine-nvim;
+        type = "lua";
+        config = builtins.readFile ./lualine.lua;
+      }
+      {
+        plugin = gitsigns-nvim;
+        type = "lua";
+        config = builtins.readFile ./gitsigns.lua;
+      }
+      {
+        plugin = comment-nvim;
+        type = "lua";
+        config = "require(\"Comment\").setup()";
       }
 
       nvim-cmp

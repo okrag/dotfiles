@@ -54,7 +54,6 @@
     hyprpicker
 
     # Libs
-    nixpkgs-fmt
     openssl_3
     libnotify
     wl-clipboard
