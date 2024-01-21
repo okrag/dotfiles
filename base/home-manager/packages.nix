@@ -60,5 +60,8 @@
     wl-clipboard
     swww
     playerctl
+    xwayland
+    xwaylandvideobridge
+    bottles
   ];
 }
