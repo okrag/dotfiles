@@ -16,46 +16,50 @@
       nixpkgs-fmt
     ];
     plugins = with pkgs.vimPlugins; [
-      (nvim-treesitter.withPlugins (p: [
-        p.tree-sitter-nix
-        p.tree-sitter-vim
-        p.tree-sitter-bash
-        p.tree-sitter-lua
-        p.tree-sitter-c
-        p.tree-sitter-rust
-        p.tree-sitter-json
-        p.tree-sitter-typescript
-        p.tree-sitter-javascript
-      ]))
+      {
+        plugin = (nvim-treesitter.withPlugins (p: [
+          p.tree-sitter-nix
+          p.tree-sitter-vim
+          p.tree-sitter-bash
+          p.tree-sitter-lua
+          p.tree-sitter-c
+          p.tree-sitter-rust
+          p.tree-sitter-json
+          p.tree-sitter-typescript
+          p.tree-sitter-javascript
+        ]));
+        type = "lua";
+        config = builtins.readFile ./plugins/treesitter.lua;
+      }
       {
         plugin = telescope-nvim;
         type = "lua";
-        config = builtins.readFile ./telescope.lua;
+        config = builtins.readFile ./plugins/telescope.lua;
       }
       {
         plugin = harpoon;
         type = "lua";
-        config = builtins.readFile ./harpoon.lua;
+        config = builtins.readFile ./plugins/harpoon.lua;
       }
       {
         plugin = tokyonight-nvim;
         type = "lua";
-        config = builtins.readFile ./colors.lua;
+        config = builtins.readFile ./plugins/colors.lua;
       }
       {
         plugin = lsp-zero-nvim;
         type = "lua";
-        config = builtins.readFile ./lsp.lua;
+        config = builtins.readFile ./plugins/lsp.lua;
       }
       {
         plugin = lualine-nvim;
         type = "lua";
-        config = builtins.readFile ./lualine.lua;
+        config = builtins.readFile ./plugins/lualine.lua;
       }
       {
         plugin = gitsigns-nvim;
         type = "lua";
-        config = builtins.readFile ./gitsigns.lua;
+        config = builtins.readFile ./plugins/gitsigns.lua;
       }
       {
         plugin = comment-nvim;
@@ -77,10 +81,9 @@
     ];
 
     extraLuaConfig = ''
-      
-      ${builtins.readFile ./remap.lua}
-      ${builtins.readFile ./set.lua}
-      ${builtins.readFile ./treesitter.lua}
+    
+      ${builtins.readFile ./keymap.lua}
+      ${builtins.readFile ./settings.lua}
     '';
   };
 }

@@ -51,8 +51,8 @@
       "editor.fontFamily" = "'JetBrainsMono NF', 'Droid Sans Mono', 'monospace', monospace";
       "workbench.colorTheme" = (import ./theme.nix).vscode.theme;
       "workbench.iconTheme" = "vscode-icons";
-      "nix.enableLanguageServer" = true;
-      "nix.serverPath" = "${pkgs.rnix-lsp}/bin/rnix-lsp";
+      "nix.serverPath" = "${pkgs.nixd}/bin/nixd";
+      "nix.formatterPath" = "${pkgs.nixpkgs-fmt}/bin/nixpkgs-fmt";
       "git.autofetch" = true;
       "git.confirmSync" = false;
       "editor.wordWrap" = "wordWrapColumn";

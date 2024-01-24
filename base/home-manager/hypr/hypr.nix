@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, hyprland, ... }:
 let conf = rec {
   wallpaper = ../wallpapers/mac.jpg;
   lock = "${../lock.sh} ${pkgs.swayidle}/bin/swayidle ${wallpaper}";
@@ -16,5 +16,6 @@ let conf = rec {
     };
     extraConfig = import ./keybinds.nix conf;
     settings = import ./config.nix conf;
+    package = hyprland.packages.${pkgs.system}.hyprland;
   };
 }
