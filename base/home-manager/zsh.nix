@@ -41,6 +41,14 @@
             cd $__pre_sys_repo_action_pwd
           }
 
+          function home-manager-news {
+            __start_sys_repo_action
+
+            home-manager news --flake .\#okrag
+            
+            __end_sys_repo_action
+          }
+
           function homeupdate {
             __start_sys_repo_action
             
