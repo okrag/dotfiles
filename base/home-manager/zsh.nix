@@ -9,7 +9,7 @@
         editsys = "pwd=$(pwd) && cd ${configPath} && $EDITOR . && cd $pwd";
       };
       initExtraFirst = ''
-          source ${./p10k.zsh}
+        source ${./p10k.zsh}
       '';
       initExtra = let title_prefix = " "; in
         ''
@@ -24,31 +24,39 @@
             echo -en "\e]2;${title_prefix}$1\a"
           }
 
-          function homeupdate {
-            pwd=$(pwd)
+          __pre_sys_repo_action_pwd="~"
+
+          function __start_sys_repo_action {
+            __pre_sys_repo_action_pwd="$(pwd)"
             cd ${configPath}
             mv .git .git.b
             cd patched
             mv .git .git.b
-            home-manager switch --flake .\#okrag
+          }
+
+          function __end_sys_repo_action {
             mv .git.b .git
             cd ..
             mv .git.b .git
+            cd $__pre_sys_repo_action_pwd
+          }
+
+          function homeupdate {
+            __start_sys_repo_action
+            
+            home-manager switch --flake .\#okrag
+            
             nix run nixpkgs\#betterdiscordctl install
-            cd $pwd
+
+            __end_sys_repo_action
           }
 
           function sysupdate {
-            pwd=$(pwd)
-            cd ${configPath}
-            mv .git .git.b
-            cd patched
-            mv .git .git.b
+            __start_sys_repo_action
+
             doas nixos-rebuild switch --flake .\#okrag
-            mv .git.b .git
-            cd ..
-            mv .git.b .git
-            cd $pwd
+
+            __end_sys_repo_action
           }
         '';
 
