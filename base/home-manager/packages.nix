@@ -20,6 +20,7 @@
     krita
     signal-desktop
     pavucontrol
+    transmission
 
     # Java
     jetbrains.idea-community
