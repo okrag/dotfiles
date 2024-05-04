@@ -1,9 +1,9 @@
 { wallpaper, lock, pkgs, terminal, terminal_class, ... }: {
   monitor = [
-    "DP-2,1920x1080@144,0x0,1"
-    "DP-1,1920x1080@144,0x0,1"
-    "DVI-I-1,preffered,1920x0,1"
-    "DVI-D-1,preffered,1920x0,1"
+    "DP-2,1920x1080@144,1920x0,1"
+    "DP-1,1920x1080@144,1920x0,1"
+    "DVI-I-1,preffered,0x0,1"
+    "DVI-D-1,preffered,0x0,1"
   ];
 
   workspace =
