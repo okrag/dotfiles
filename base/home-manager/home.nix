@@ -28,12 +28,12 @@
 
   gtk = {
     enable = true;
-    theme.name = "adwaita-dark";
+    theme.name = "Adwaita Dark";
   };
 
   qt = {
     enable = true;
-    platformTheme = "gtk";
+    platformTheme.name = "gtk";
     style.name = "adwaita-dark";
     style.package = pkgs.adwaita-qt;
   };
@@ -94,8 +94,8 @@
 
     eza = {
       enable = true;
-      enableAliases = true;
-      icons = true;
+      enableZshIntegration = true;
+      icons = "auto";
     };
 
     git = {

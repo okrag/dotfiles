@@ -11,6 +11,9 @@
 
     hyprland.url = "github:hyprwm/Hyprland";
     hyprland.inputs.nixpkgs.follows = "nixpkgs";
+
+    fabric.url = "github:Fabric-Development/fabric";
+    fabric.inputs.nixpkgs.follows = "nixpkgs";
   };
 
   outputs = { self, nixpkgs, home-manager, hyprland, ... }@inputs:
@@ -20,7 +23,7 @@
       pkgs = nixpkgs.legacyPackages.${system};
     in
     rec {
-      packages = import ./pkgs { inherit pkgs; };
+      packages = import ./pkgs { inherit pkgs hyprland; };
       devShells.${system} = import ./shell.nix { inherit pkgs; };
       overlays = import ./overlays { inherit inputs; };
 

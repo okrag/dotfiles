@@ -88,7 +88,7 @@ let colors = import ./colors.nix; in
       };
 
     "custom/nightlight" = {
-      on-click = "${pkgs.hyprshade}/bin/hyprshade toggle ${../hypr/nightlight.frag}";
+      on-click = "${pkgs.hyprshade}/bin/hyprshade";
 
       format = "<span color=\"${colors.kernel}\"> </span>";
     };

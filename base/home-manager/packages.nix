@@ -9,18 +9,18 @@
 
     # Apps
     networkmanagerapplet
-    floorp
+    brave
     discord
     spotify
     openboard
-    gnome.simple-scan
+    simple-scan
     tor-browser-bundle-bin
     baobab
-    gnome.gnome-system-monitor
+    # gnome-system-monitor
     krita
     signal-desktop
     pavucontrol
-    transmission
+    transmission_4
 
     # Java
     jetbrains.idea-community
@@ -53,6 +53,9 @@
     swappy
 
     hyprpicker
+    hyprsome
+    hyprpolkitagent
+
 
     # Libs
     openssl_3
@@ -61,7 +64,6 @@
     swww
     playerctl
     xwayland
-    xwaylandvideobridge
     bottles
   ];
 }

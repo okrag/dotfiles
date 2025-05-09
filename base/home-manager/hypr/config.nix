@@ -2,12 +2,18 @@
   monitor = [
     "DP-2,1920x1080@144,1920x0,1"
     "DP-1,1920x1080@144,1920x0,1"
+    "HDMI-A-1,1920x1080@144,1920x0,1"
     "DVI-I-1,preffered,0x0,1"
     "DVI-D-1,preffered,0x0,1"
   ];
 
   workspace =
-    let monitors = [ "DP-1" "DVI-D-1" ];
+    let
+      monitors = [
+        "HDMI-A-1"
+        "DP-1"
+        "DVI-D-1"
+      ];
     in
     builtins.genList
       (i:
@@ -72,7 +78,7 @@
     "col.shadow" = "rgba(01010166)";
 
     # Shader
-    screen_shader = "${./nightlight.frag}";
+    # screen_shader = "${./nightlight.frag}";
 
     # Dim
     dim_inactive = false;

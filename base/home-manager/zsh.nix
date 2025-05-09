@@ -3,7 +3,7 @@
     let configPath = "~/.system"; in
     {
       enable = true;
-      enableAutosuggestions = true;
+      autosuggestion.enable = true;
       shellAliases = {
         cleangarbage = "doas nix-collect-garbage --delete-older-than 5d";
         editsys = "pwd=$(pwd) && cd ${configPath} && $EDITOR . && cd $pwd";
@@ -11,7 +11,7 @@
       initExtraFirst = ''
         source ${./p10k.zsh}
       '';
-      initExtra = let title_prefix = " "; in
+      initContent = let title_prefix = " "; in
         ''
           DISABLE_AUTO_TITLE="true"
 
@@ -35,6 +35,7 @@
           }
 
           function __end_sys_repo_action {
+            cd ${configPath}/patched
             mv .git.b .git
             cd ..
             mv .git.b .git

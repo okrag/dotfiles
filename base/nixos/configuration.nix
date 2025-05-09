@@ -199,9 +199,9 @@
 
   fonts.packages = with pkgs; [
     noto-fonts
-    noto-fonts-cjk
+    noto-fonts-cjk-sans
     noto-fonts-emoji
-    nerdfonts
+    nerd-fonts.symbols-only
     jetbrains-mono
   ];
 
@@ -216,22 +216,22 @@
     ];
   };
 
-  security.polkit.enable = true;
+  # security.polkit.enable = true;
+  # security.polkit.package = pkgs.hyprpolkitagent;
   security.pam.services.swaylock = { };
 
   xdg.portal.enable = true;
   xdg.portal.configPackages = [ pkgs.xdg-desktop-portal-hyprland ];
   xdg.portal.extraPortals = [ pkgs.xdg-desktop-portal-hyprland ];
 
-  sound.enable = true;
   security.rtkit.enable = true;
-  hardware.pulseaudio.enable = false;
   services.pipewire = {
     enable = true;
     alsa.enable = true;
     alsa.support32Bit = true;
     pulse.enable = true;
     jack.enable = true;
+    wireplumber.enable = true;
   };
   services.printing.enable = true;
   services.printing.drivers = [ pkgs.brlaser ];
@@ -246,13 +246,12 @@
   environment.sessionVariables = {
     WLR_NO_HARDWARE_CURSORS = "1";
     NIXOS_OZONE_WL = "1";
-    DOTNET_ROOT = "${pkgs.dotnet-sdk_7}";
+    DOTNET_ROOT = "${pkgs.dotnet-sdk_8}";
   };
 
-  hardware.opengl = {
+  hardware.graphics = {
     enable = true;
-    driSupport = true;
-    driSupport32Bit = true;
+    enable32Bit = true;
   };
   services.xserver.videoDrivers = [ "nvidia" ];
   hardware.nvidia = {

@@ -1,7 +1,7 @@
 { pkgs, ... }: {
   programs.vscode = {
     enable = true;
-    extensions = with pkgs.vscode-extensions; [
+    profiles.default.extensions = with pkgs.vscode-extensions; [
       vscode-icons-team.vscode-icons
       jnoortheen.nix-ide
       naumovs.color-highlight
@@ -40,7 +40,7 @@
         sha256 = "Giqw3tl7+/cGAbJeirSbJFTgAiTELKR9Gq/ZIQub0CE=";
       }
     ] ++ (import ./theme.nix).vscode.extensions pkgs;
-    userSettings = {
+    profiles.default.userSettings = {
       "explorer.confirmDragAndDrop" = false;
       "explorer.confirmDelete" = false;
       "editor.fontSize" = 16;
